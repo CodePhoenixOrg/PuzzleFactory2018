@@ -1,1 +1,0 @@
-	L'ensemble de composants Pieces Of Puzzle sera prochainement disponible en téléchargement accompagné d'une application de démonstration. Les notes d'installation seront fournies pour mettre en place l'environnement de runtime.<p>

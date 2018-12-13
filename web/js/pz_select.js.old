@@ -1,0 +1,105 @@
+	//Déclaration des objets de la page pour la manipulation dans les fonctions JavaScript
+
+	var lib_jrn_p=document.getElementById("jrn_nom");
+	var lib_jrn_m=document.getElementById("lib_journalistes");
+
+	var lib_ori_p=document.getElementById("ori_libelle");
+	var lib_ori_m=document.getElementById("lib_origines");
+
+	var lib_rub_p=document.getElementById("rub_libelle");
+	var lib_rub_m=document.getElementById("lib_rubriques");
+
+	var lib_tpr_p=document.getElementById("tpr_libelle");
+	var lib_tpr_m=document.getElementById("lib_type_presse");
+
+	var lib_gro_p=document.getElementById("gro_libelle");
+	var lib_gro_m=document.getElementById("lib_groupement");
+
+	var lib_jfo_p=document.getElementById("jfo_libelle");
+	var lib_jfo_m=document.getElementById("lib_jrn_fonctions");
+
+	var lib_per_p=document.getElementById("per_libelle");
+	var lib_per_m=document.getElementById("lib_periodicite");
+
+	var lib_pay_p=document.getElementById("pay_libelle");
+	var lib_pay_m=document.getElementById("lib_pays");
+
+	var lib_tit_p=document.getElementById("tit_libelle");
+	var lib_tit_m=document.getElementById("lib_titres");
+
+	//Ajouter l'élément 'Aucun' si la liste est vide
+	function AddNoneItem(List) {
+		if(List.length==0) List.options[0] = new Option('Aucun');
+	}
+	
+	//Ajouter un élément d'une liste à une autre liste
+	function AddFromSelToSel(lib_plus, lib_moins) {
+		var index; var item; var long; var itemFound; var firstItem; var noneItem;
+		if(lib_moins.options[0]) firstItem=lib_moins.options[0].text;
+		noneItem='Aucun';
+		if (firstItem==noneItem) lib_moins.options[0] = null;
+
+		index=lib_plus.selectedIndex;
+		item=lib_plus.options[index].text;
+
+		long=lib_moins.length;
+		i=0;
+		itemFound=false;
+		while(i<long && !itemFound) {
+			//if(lib_moins.options[i].text==item) itemFound=true;
+			itemFound=lib_moins.options[i].text==item;
+			i++;
+		}
+
+		long=lib_moins.length;
+		if(!itemFound) {
+			long=lib_moins.length;
+			lib_moins.options[long] = new Option(item);
+		}
+
+	}
+
+	//Retirer un élément d'une liste
+	function RemoveFromSel(lib_moins) {
+		var index;
+
+		index=lib_moins.selectedIndex;
+		if(index>-1) {
+			lib_moins.options[index] = null;
+			AddNoneItem(lib_moins);
+		}
+	}
+
+	//Sélectionner tous les éléments d'une liste
+	function SelectOptions(List) {
+		var long;
+		
+		long=List.length;
+		for(i=0; i<long; i++) {
+			List.options[i].selected=true;
+		}
+	}
+
+	//Ajouter l'élément 'Aucun' à toutes listes si elles sont vides
+	function AddAllNoneItem() {
+		AddNoneItem(lib_jrn_m);
+		AddNoneItem(lib_ori_m);
+		AddNoneItem(lib_rub_m);
+		AddNoneItem(lib_tpr_m);
+		AddNoneItem(lib_gro_m);
+		AddNoneItem(lib_jfo_m);
+		AddNoneItem(lib_per_m);
+	}
+	
+	//Sélectionner tous les éléments de toutes les listes du formulaire
+	function SelectAll() {
+		SelectOptions(lib_jrn_m);
+		SelectOptions(lib_ori_m);
+		SelectOptions(lib_rub_m);
+		SelectOptions(lib_tpr_m);
+		SelectOptions(lib_gro_m);
+		SelectOptions(lib_jfo_m);
+		SelectOptions(lib_per_m);
+	}
+
+	AddAllNoneItem();

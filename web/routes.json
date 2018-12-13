@@ -1,0 +1,12 @@
+{
+    "web": {
+        "post": {
+            "/splash$": "/views/splash.phtml",
+            "/page.html$": "/views/page.phtml",
+            "/firststep.html$": "/views/firststep.phtml",
+            "/home.html$": "/views/home.phtml",
+            "/login.html$": "/views/login.phtml",
+            "/master.html$": "/views/master.phtml"
+        }
+    }
+}

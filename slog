@@ -1,0 +1,7 @@
+#!/bin/bash
+pwd
+
+echo > logs/debug.log
+find runtime -type f -exec echo {} \; 
+find web/js/runtime -type f -exec echo {} \; 
+echo "All logs and temporary files are shown here "

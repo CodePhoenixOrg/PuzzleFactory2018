@@ -1,0 +1,22 @@
+DROP TABLE IF EXISTS v_menus
+
+CREATE TABLE v_menus(
+me_index int( 11 ) NOT NULL default '1',
+pa_index int( 11 ) NOT NULL default '1',
+me_target varchar( 7 ) NOT NULL default 'page',
+me_level char( 1 ) NOT NULL default '1',
+di_index varchar( 8 ) NOT NULL default '',
+pa_filename varchar( 255 ) NOT NULL default '',
+di_fr_short varchar( 50 ) NOT NULL default '',
+di_fr_long text NOT NULL ,
+di_en_short varchar( 50 ) NOT NULL default '',
+di_en_long text NOT NULL ,
+ PRIMARY KEY ( me_index ) ,
+ UNIQUE KEY me_index( me_index ) 
+) TYPE = MYISAM CHARSET = latin1
+
+ INSERT INTO v_menus( me_index, pa_index, me_level, di_index, me_target, pa_filename, di_fr_short, di_fr_long, di_en_short, di_en_long ) 
+SELECT m.me_index, m.pa_index, m.me_level, m.di_index, m.me_target, p.pa_filename, d.di_fr_short, d.di_fr_long, d.di_en_short, d.di_en_long
+FROM menus m, pages p, dictionary d
+WHERE m.di_index = d.di_index AND p.di_index = d.di_index
+ORDER BY m.me_index;

@@ -1,0 +1,30 @@
+181202 12:27:51  mysqld started
+InnoDB: The first specified data file ./ibdata1 did not exist:
+InnoDB: a new database to be created!
+181202 12:27:51  InnoDB: Setting file ./ibdata1 size to 10 MB
+InnoDB: Database physically writes the file full: wait...
+181202 12:27:51  InnoDB: Log file ./ib_logfile0 did not exist: new to be created
+InnoDB: Setting log file ./ib_logfile0 size to 5 MB
+InnoDB: Database physically writes the file full: wait...
+181202 12:27:51  InnoDB: Log file ./ib_logfile1 did not exist: new to be created
+InnoDB: Setting log file ./ib_logfile1 size to 5 MB
+InnoDB: Database physically writes the file full: wait...
+InnoDB: Doublewrite buffer not found: creating new
+InnoDB: Doublewrite buffer created
+InnoDB: Creating foreign key constraint system tables
+InnoDB: Foreign key constraint system tables created
+181202 12:27:52  InnoDB: Started; log sequence number 0 0
+/usr/local/mysql/libexec/mysqld: ready for connections.
+Verion: '4.1.25-log'  ssocket: '/tmp/mysql.sock'  port: 0  Source distribution
+181202 12:28:01 [Note] /usr/local/mysql/libexec/mysqld: Normal shutdown
+
+181202 12:28:01  InnoDB: Starting shutdown...
+181202 12:28:04  InnoDB: Shutdown completed; log sequence number 0 43684
+181202 12:28:04 [Note] /usr/local/mysql/libexec/mysqld: Shutdown complete
+
+181202 12:28:04  mysqld ended
+
+181202 12:28:06  mysqld started
+181202 12:28:06  InnoDB: Started; log sequence number 0 43684
+/usr/local/mysql/libexec/mysqld: ready for connections.
+Verion: '4.1.25-log'  ssocket: '/tmp/mysql.sock'  port: 3306  Source distribution

@@ -1,0 +1,8 @@
+#!/bin/bash
+echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+echo @@@ DEBUG BEGIN                        @@@
+echo @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#tail -f logs/debug.log
+less logs/debug.log
+exit 0
+

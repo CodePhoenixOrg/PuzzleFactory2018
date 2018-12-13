@@ -1,0 +1,5 @@
+<phx:TPlugin id="list0"  pattern="table" pivot="false" command="var:cmd" children="var:items" rowCount="var:pageCount" pageNum="var:index" >
+    <phx:TPluginChild id="items" name="pid" enabled="false" />
+    <phx:TPluginChild id="items" name="id" enabled="false" />
+    <phx:TPluginChild id="items" name="Title" content="@playlistTrack.phtml"  enabled="true" event="href#solPlayer.pl.removeTrack(id)" />
+</phx:TPlugin>

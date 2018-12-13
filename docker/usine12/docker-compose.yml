@@ -1,0 +1,16 @@
+version: "3.0"
+services:
+  amp:
+    build: ./usine6
+    image: amp:latest
+    environment:
+     - MYSQL_ROOT_PASSWORD=demo
+    ports:
+     - "3306:3306"
+    volumes:
+     - my_data:/var/lib/mysql
+     - ./data/mysql:/data
+     - ../web:/Users/david/Sites/backup_040321/var/www/html/factory
+volumes:
+  my_data:
+
